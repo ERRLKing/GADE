@@ -1,0 +1,128 @@
+{
+  "agent": {
+    "id": "npc_001",
+    "name": "Mikhail",
+    "archetype": "survivor",
+    "traits": {
+      "aggression": 0.4,
+      "caution": 0.8,
+      "greed": 0.6,
+      "curiosity": 0.5,
+      "loyalty": 0.2,
+      "panic": 0.3
+    }
+  },
+  "body": {
+    "health": 82,
+    "stamina": 61,
+    "hunger": 74,
+    "thirst": 41,
+    "temperature": 38,
+    "bleeding": false,
+    "fatigue": 25
+  },
+  "equipment": {
+    "weapons": [
+      {
+        "name": "shotgun",
+        "ammoLoaded": 4,
+        "reserveAmmo": 10,
+        "effectiveRange": 40
+      }
+    ],
+    "medical": ["bandage"],
+    "food": [],
+    "tools": ["knife"],
+    "clothing": ["jacket", "boots"]
+  },
+  "environment": {
+    "biome": "rural_settlement_edge",
+    "weather": "light_rain",
+    "lightLevel": "dusk",
+    "cover": "moderate",
+    "visibility": "medium",
+    "noiseLevel": "low"
+  },
+  "positionContext": {
+    "regionType": "village_outskirts",
+    "safetyRating": 0.42,
+    "pointsOfInterest": [
+      {
+        "type": "structure",
+        "distance": 70,
+        "direction": "southwest"
+      },
+      {
+        "type": "water_source",
+        "distance": 230,
+        "direction": "east"
+      }
+    ]
+  },
+  "perception": {
+    "entities": [
+      {
+        "type": "humanoid",
+        "relation": "unknown",
+        "distance": 120,
+        "direction": "south",
+        "armed": true,
+        "count": 1,
+        "threatScore": 0.72
+      },
+      {
+        "type": "hostile_creature",
+        "relation": "hostile",
+        "distance": 35,
+        "direction": "west",
+        "armed": false,
+        "count": 2,
+        "threatScore": 0.35
+      }
+    ],
+    "events": [
+      {
+        "type": "gunshots_heard",
+        "ageSeconds": 20,
+        "direction": "east",
+        "intensity": "medium"
+      }
+    ]
+  },
+  "memory": {
+    "shortTerm": [
+      "avoided armed humanoid recently",
+      "did not find food in last structure searched"
+    ],
+    "longTerm": [
+      "prefers avoiding unknown armed targets",
+      "prioritizes staying fed over combat"
+    ]
+  },
+  "capabilities": {
+    "canMove": true,
+    "canLoot": true,
+    "canHeal": true,
+    "canUseWeapons": true,
+    "canHide": true,
+    "canInteract": false,
+    "canCraft": false
+  },
+  "actionSpace": [
+    "MOVE_TO_POINT",
+    "LOOT_NEARBY_STRUCTURE",
+    "HIDE",
+    "AVOID_ENTITY",
+    "ENGAGE_TARGET",
+    "HEAL_SELF",
+    "SEARCH_FOR_FOOD",
+    "SEARCH_FOR_WATER",
+    "OBSERVE_AREA",
+    "RETREAT"
+  ],
+  "currentPlan": {
+    "intent": "SEARCH_FOR_FOOD",
+    "ageSeconds": 40,
+    "status": "in_progress"
+  }
+}
