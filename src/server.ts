@@ -4,6 +4,7 @@ import { evaluateRouter } from './routes/evaluate'
 import { reactRouter } from './routes/react'
 import { decideRouter } from './routes/decide'
 import { reflectRouter } from './routes/reflect'
+import { dbInfo } from './db/sqlite'
 
 const app = express()
 const port = Number(process.env.PORT || 8787)
@@ -21,6 +22,8 @@ console.log('[startup]', {
   baseURL: resolvedBaseURL,
   hasOpenAiKey: Boolean(process.env.OPENAI_API_KEY),
   hasLlmApiKey: Boolean(process.env.LLM_API_KEY),
+  dbMode: dbInfo.mode,
+  dbPath: dbInfo.resolvedPath,
 })
 
 app.use(express.json({ limit: '1mb' }))
@@ -35,6 +38,8 @@ app.get('/health', (_req, res) => {
     baseURL: resolvedBaseURL,
     hasOpenAiKey: Boolean(process.env.OPENAI_API_KEY),
     hasLlmApiKey: Boolean(process.env.LLM_API_KEY),
+    dbMode: dbInfo.mode,
+    dbPath: dbInfo.resolvedPath,
   })
 })
 

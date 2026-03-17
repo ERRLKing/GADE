@@ -101,6 +101,24 @@ npm run dev
 - Successful strategic LLM decisions append `source:openai` to `constraints` because the OpenAI SDK is used against an OpenAI-compatible endpoint. Fallback decisions append `source:fallback`.
 - Fast `/react` responses append `source:react`.
 
+## SQLite persistence
+
+By default the engine uses a file-based SQLite database so memory survives restarts:
+
+```env
+DB_PATH=./data/agent-memory.sqlite
+```
+
+That is the recommended default for real integrations because `/reflect` and long-term summaries are only really useful if they persist between runs.
+
+If you want a fully ephemeral test run instead, set:
+
+```env
+DB_PATH=:memory:
+```
+
+In memory mode, all stored events and long-term summaries disappear when the process exits.
+
 ## Engine modes
 
 Set `ENGINE_MODE` in `.env`:
