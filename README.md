@@ -442,3 +442,5 @@ Stores new memory events and refreshes a simple long-term summary.
 ## Final note
 
 This engine is intended to be a reusable, downloadable decision layer that developers run themselves. It is not meant to replace the core runtime logic inside a game. The strongest integrations will keep fast action logic in the game and use this engine for interpretation, reaction recommendations, strategic planning, and memory.
+
+This is currently experimental and we welcome pull requests from developers for additions and fixes. You can also post in the issues section if you run into any problems or have any feature requests.
